@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="utm_generator.css">
+<script type="text/javascript" src="utm-gen-backend.js"></script>
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="header">URL Builder
+      </div>
+         <form class="container-2">
+               <div class="weburl">
+                  <input type="text" name="Web URL" id="weburl" placeholder="Web URL" oninput="generateUTM()" required />
+               </div>
+               <div class="source">
+                  <input type="text" name="Source" id="utm_source" placeholder="campaign source" oninput="generateUTM()" required />
+               </div>
+               <div class="medium">
+                  <input type="text" name="medium" id="utm_medium" placeholder="campaign medium" oninput="generateUTM()" required />
+               </div>
+               <div class="camapign">
+                  <input type="text" name="campaign" id="utm_campaign" placeholder="campaign" oninput="generateUTM()" required />
+               </div>
+               <div class="content">
+                  <input type="text" name="content" id="utm_content" placeholder="campaign content" oninput="generateUTM()" />
+               </div>
+         </form>
+      <div class="output_container"> 
+            <div class="utm_output utm-gen" >
+               <p id="utmOutput" value="utm output"></p>
+                  <div class="tooltip">
+                     <button onclick="clipboardCopy()">
+                        <span class="tooltiptext" id="myTooltip">Copy URL</span>
+                        <svg class="copy_button" xmlns="http://www.w3.org/2000/svg"  version="1.1" viewBox="-15 -20 130 130">
+                        <path d="m73.957 70.832v-54.164c-0.019531-4.0195-3.2734-7.2695-7.2891-7.293h-45.836c-4.0156 0.023438-7.2695 3.2734-7.2891 7.293v54.164c0.019531 4.0195 3.2734 7.2695 7.2891 7.293h45.836c4.0156-0.023438 7.2695-3.2734 7.2891-7.293zm-54.168 0 0.003907-54.164c0-0.57812 0.46484-1.043 1.0391-1.043h45.836c0.27344 0 0.53906 0.10938 0.73438 0.30469 0.19531 0.19531 0.30469 0.46094 0.30469 0.73828v54.164c0 0.27734-0.10938 0.54297-0.30469 0.73828-0.19531 0.19531-0.46094 0.30469-0.73438 0.30469h-45.836c-0.57422 0-1.0391-0.46484-1.0391-1.043zm66.668-45.832v58.332c-0.019531 4.0195-3.2734 7.2695-7.2891 7.293h-50c-1.7266 0-3.125-1.3984-3.125-3.125s1.3984-3.125 3.125-3.125h50c0.27344 0 0.53906-0.10938 0.73438-0.30469 0.19531-0.19531 0.30469-0.46094 0.30469-0.73828v-58.332c0-1.7266 1.4023-3.125 3.125-3.125 1.7266 0 3.125 1.3984 3.125 3.125z"/>
+                     </svg>
+                  </button>
+               </div>
+            </div>   
+      </div>
+   </div>
+</body>
+</html>
