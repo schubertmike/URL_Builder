@@ -36,25 +36,27 @@ requiredFields.forEach(field => {
 
 
 
-  //base url and build string
+//base url and build string
   let utmString = url ? url + '?' : '';
   if (source) utmString += `utm_source=${source}`;
   if (medium) utmString += `${utmString.includes('utm_source') ? '&' : ''}utm_medium=${medium}`;
   if (campaign) utmString += `${utmString.includes('utm_medium') || utmString.includes('utm_source') ? '&' : ''}utm_content=${campaign}`;
   if (content) utmString += `${utmString.includes('utm_content') || utmString.includes('utm_medium') || utmString.includes('utm_source') ? '&' : ''}utm_campaign=${content}`;
 
-  //output result
+//output result
   document.getElementById('utmOutput').innerText = utmString;
 }
 
+//function to copy generator output to clipboard
 function clipboardCopy() {
   var copyText = document.getElementById('utmOutput').innerText; // Get text inside <p>
 
+//copies output to clipboard, then presents tooltip
   navigator.clipboard.writeText(copyText).then(() => {
     var tooltip = document.getElementById('myTooltip');
     tooltip.innerHTML = "Copied to clipboard";
 
-    // Reset tooltip text after 2 seconds
+// Reset tooltip text after 2 seconds
     setTimeout(() => {
       tooltip.innerHTML = "Copy URL";
     }, 2000);
